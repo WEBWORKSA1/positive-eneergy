@@ -1,0 +1,10 @@
+title: Positive.Energy
+url: https://positive.energy
+exclude:
+  - README.md
+  - PROMPTS.md
+  - RESEARCH.md
+  - scripts
+  - .gitignore
+include:
+  - .well-known
