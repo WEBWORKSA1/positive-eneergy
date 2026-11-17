@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.desc }}">
+{{ page.robots }}
+<link rel="canonical" href="{{ page.canon }}">
+<meta property="og:type" content="{{ page.ogtype }}">
+<meta property="og:site_name" content="Positive.Energy">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.desc }}">
+<meta property="og:url" content="{{ page.canon }}">
+<meta property="og:image" content="https://positive.energy/assets/img/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1C1442">
+<meta name="google-adsense-account" content="ca-pub-6620975821265271">
+<link rel="icon" href="{{ page.pre }}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="{{ page.pre }}site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Positive.Energy guides" href="{{ page.pre }}feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ page.pre }}assets/css/style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+{{ page.ld }}</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="owner-strip">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership — <a href="https://web.works/contact" target="_blank" rel="noopener">contact here</a></div>
+<header class="site-head">
+ <div class="wrap head-row">
+  <a class="brand" href="{{ page.pre }}index.html" aria-label="Positive.Energy home"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF4F87"/><stop offset=".5" stop-color="#FF6B4A"/><stop offset="1" stop-color="#FFC23D"/></linearGradient></defs><rect x="1" y="1" width="38" height="38" rx="12" fill="#1C1442"/><path d="M9 27a11 11 0 0 1 22 0z" fill="url(#lg)"/><path d="M20 8v4M10.5 12.5l2.8 2.8M29.5 12.5l-2.8 2.8M6 21h3M31 21h3" stroke="#FFC23D" stroke-width="2.2" stroke-linecap="round"/><path d="M7 30.5h26" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M21.6 16.5l-4 6h3l-1.2 4.5 4.2-6h-3z" fill="#1C1442"/></svg><span>Positive<span class="dot">.</span>Energy</span></a>
+  <button class="icon-btn menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <nav class="nav" id="nav" aria-label="Main"><a href="{{ page.pre }}daily.html"{% if page.nav_key == "daily" %} aria-current="page"{% endif %}>Today</a><a href="{{ page.pre }}tools/"{% if page.nav_key == "tools" %} aria-current="page"{% endif %}>Tools</a><a href="{{ page.pre }}guides/"{% if page.nav_key == "guides" %} aria-current="page"{% endif %}>Guides</a><a href="{{ page.pre }}quotes.html"{% if page.nav_key == "quotes" %} aria-current="page"{% endif %}>Quotes</a><a href="{{ page.pre }}news.html"{% if page.nav_key == "news" %} aria-current="page"{% endif %}>Good News</a><a href="{{ page.pre }}videos.html"{% if page.nav_key == "videos" %} aria-current="page"{% endif %}>Videos</a><a href="{{ page.pre }}workplace.html"{% if page.nav_key == "workplace" %} aria-current="page"{% endif %}>For Teams</a><a href="{{ page.pre }}contests.html"{% if page.nav_key == "contests" %} aria-current="page"{% endif %}>Contests</a><a href="{{ page.pre }}support.html"{% if page.nav_key == "support" %} aria-current="page"{% endif %}>Support</a><a class="btn small sun" href="{{ page.pre }}match.html">Find my coach</a>
+   <button class="icon-btn" data-theme-toggle aria-label="Switch light or dark theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+ </div>
+</header>
+<main id="main">
+{{ content }}
+</main>
+<footer class="site-foot">
+ <div class="wrap">
+  <div class="foot-grid">
+   <div>
+    <a class="brand" href="{{ page.pre }}index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="12" fill="#2A1F5E"/><path d="M9 27a11 11 0 0 1 22 0z" fill="#FF8A45"/><path d="M20 8v4M10.5 12.5l2.8 2.8M29.5 12.5l-2.8 2.8M6 21h3M31 21h3" stroke="#FFC23D" stroke-width="2.2" stroke-linecap="round"/><path d="M7 30.5h26" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Positive<span class="dot">.</span>Energy</span></a>
+    <p style="margin-top:14px">Free tools, science-backed practices and good news to help you feel better, think clearer and spread positive energy.</p>
+    <form class="form" data-form="Newsletter signup" data-ok="You're in! Your first Daily Spark lands soon." style="margin-top:16px">
+     <label for="nl-email">The Daily Spark — one uplifting idea, quote &amp; practice</label>
+     <div class="hp" aria-hidden="true"><label>Leave this empty<input name="_hp" tabindex="-1" autocomplete="off"></label></div>
+     <input id="nl-email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+     <select name="frequency" aria-label="How often"><option>Daily</option><option>Weekly digest</option></select>
+     <button class="btn sun" type="submit">Get the Daily Spark</button>
+     <p class="form-status" aria-live="polite"></p>
+    </form>
+   </div>
+   <div><h4>Feel better</h4><ul>
+    <li><a href="{{ page.pre }}daily.html">Today's positive energy</a></li><li><a href="{{ page.pre }}tools/energy-score.html">Energy Score quiz</a></li>
+    <li><a href="{{ page.pre }}tools/breathing.html">Breathing exercises</a></li><li><a href="{{ page.pre }}tools/gratitude-journal.html">Gratitude journal</a></li>
+    <li><a href="{{ page.pre }}tools/affirmations.html">Affirmation generator</a></li><li><a href="{{ page.pre }}tools/mood-tracker.html">Mood &amp; energy tracker</a></li>
+    <li><a href="{{ page.pre }}tools/30-day-challenge.html">30-day challenge</a></li><li><a href="{{ page.pre }}tools/thought-reframer.html">Thought reframer</a></li></ul></div>
+   <div><h4>Learn &amp; join</h4><ul>
+    <li><a href="{{ page.pre }}guides/">Guides</a></li><li><a href="{{ page.pre }}quotes.html">Positive quotes</a></li><li><a href="{{ page.pre }}news.html">Good news</a></li><li><a href="{{ page.pre }}videos.html">Videos</a></li>
+    <li><a href="{{ page.pre }}match.html">Find a coach</a></li><li><a href="{{ page.pre }}workplace.html">Workplace programs</a></li><li><a href="{{ page.pre }}coaches.html">For coaches</a></li>
+    <li><a href="{{ page.pre }}contests.html">Contests &amp; prizes</a></li><li><a href="{{ page.pre }}careers.html">Careers &amp; contributors</a></li><li><a href="{{ page.pre }}support.html">Support us</a></li></ul></div>
+   <div><h4>About</h4><ul>
+    <li><a href="{{ page.pre }}about.html">About &amp; editorial standards</a></li><li><a href="{{ page.pre }}advertise.html">Advertise &amp; sponsor</a></li><li><a href="{{ page.pre }}contact.html">Contact</a></li>
+    <li><a href="{{ page.pre }}help.html">Need help now?</a></li><li><a href="{{ page.pre }}privacy.html">Privacy &amp; cookies</a></li><li><a href="{{ page.pre }}terms.html">Terms of use</a></li>
+    <li><a href="{{ page.pre }}disclaimer.html">Disclaimer &amp; disclosures</a></li><li><a href="{{ page.pre }}trademark.html">Trademark &amp; copyright</a></li><li><a href="{{ page.pre }}sitemap.html">Site map</a></li></ul></div>
+  </div>
+  <div class="foot-legal">
+   <p>© <span data-year>2026</span> Positive.Energy. All original text, tools, graphics and code on this site are protected by copyright. All rights reserved.</p>
+   <p>Trademark notice: "Positive.Energy" is the name of this independent website, used descriptively for the everyday idea of positive energy. It is not affiliated with, endorsed by, sponsored by or connected to any company, brand, product, nonprofit or service that uses "Positive Energy", "PositiveEnergy" or a similar name or mark. All third-party names and marks belong to their respective owners. <a href="{{ page.pre }}trademark.html">Full trademark &amp; copyright disclosure</a>.</p>
+   <p>Content is for general wellbeing education and is not medical, psychological or professional advice. If you are in crisis, call your local emergency number or see <a href="{{ page.pre }}help.html">where to get help now</a>. Ads are served by Google AdSense. Coach-match requests are shared with vetted partners only with your consent — see our <a href="{{ page.pre }}disclaimer.html">disclosures</a>.</p>
+  </div>
+ </div>
+</footer>
+<div class="consent" id="consent" hidden role="dialog" aria-label="Cookie notice">
+ <p>We use cookies to run this site and, through Google AdSense, to show ads. Choose personalized ads, or essential cookies only with non-personalized ads. Details in our <a href="{{ page.pre }}privacy.html">privacy policy</a>.</p>
+ <div class="acts"><button class="btn small" data-consent="all">Accept all</button><button class="btn small ghost" data-consent="essential">Essential only</button></div>
+</div>
+<script src="{{ page.pre }}assets/js/config.js"></script>
+<script src="{{ page.pre }}assets/js/data.js"></script>
+<script src="{{ page.pre }}assets/js/main.js"></script>
+{{ page.tj }}
+</body>
+</html>
