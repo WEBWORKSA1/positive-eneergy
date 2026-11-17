@@ -124,11 +124,27 @@
     renderQ();
   }
 
-  /* Positive news — refreshed daily by the GitHub Action into assets/data/news.json */
+  /* Positive news — live headlines from solutions-journalism RSS feeds (via rss2json, cached 3h),
+     merged with the bundled assets/data/news.json fallback. Self-updating, no server needed. */
   var nl = document.querySelectorAll("[data-news]");
   if (nl.length) {
     var base = document.querySelector('link[rel="manifest"]').getAttribute("href").replace("site.webmanifest", "");
-    fetch(base + "assets/data/news.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (j) {
+    var FEEDS = [["Positive News", "https://www.positive.news/feed/"], ["Good News Network", "https://www.goodnewsnetwork.org/feed/"], ["Greater Good Magazine", "https://greatergood.berkeley.edu/site/rss/articles"], ["Reasons to be Cheerful", "https://reasonstobecheerful.world/feed/"]];
+    var SKIP = /subscribe|sponsored|advertis|giveaway|horoscope|deal of|good news in history/i;
+    var strip = function (h) { var d = document.createElement("div"); d.innerHTML = h || ""; var t = (d.textContent || "").replace(/\s+/g, " ").trim().replace(/The post .*? appeared first on .*$/, ""); return t.length > 170 ? t.slice(0, 170).replace(/\s\S*$/, "") + "…" : t; };
+    function live() {
+      var c = null; try { c = JSON.parse(store.get("pe-news")); } catch (e) {}
+      if (c && Date.now() - c.t < 3 * 36e5) return Promise.resolve(c.items);
+      return Promise.all(FEEDS.map(function (f) {
+        return fetch("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(f[1])).then(function (r) { return r.json(); }).then(function (j) {
+          return j.status === "ok" ? j.items.slice(0, 10).map(function (it) { return { title: it.title, link: it.link, source: f[0], date: it.pubDate ? it.pubDate.replace(" ", "T") + "Z" : null, summary: strip(it.description) }; }) : [];
+        }).catch(function () { return []; });
+      })).then(function (a) { var items = [].concat.apply([], a); if (items.length) store.set("pe-news", JSON.stringify({ t: Date.now(), items: items })); return items; });
+    }
+    Promise.all([fetch(base + "assets/data/news.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).catch(function () { return { items: [] }; }), live().catch(function () { return []; })]).then(function (res) {
+      var seen = {}, all = (res[1] || []).concat(res[0].items || []).filter(function (it) { if (!it.link || seen[it.link] || SKIP.test(it.title)) return false; seen[it.link] = 1; return true; });
+      all.sort(function (x, y) { return (y.date || "").localeCompare(x.date || ""); });
+      var j = { updated: res[1] && res[1].length ? new Date().toISOString() : res[0].updated, items: all };
       var up = document.querySelectorAll("[data-news-updated]");
       up.forEach(function (u) { u.textContent = j.updated ? new Date(j.updated).toLocaleString() : ""; });
       nl.forEach(function (box) {
